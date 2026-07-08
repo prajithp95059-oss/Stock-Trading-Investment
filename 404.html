@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Page Not Found | STACKLY Capital</title>
+<meta name="description" content="This page could not be found. Return to STACKLY Capital's homepage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --plum-deep:#170F26;
+  --ivory:#F6F2E9;
+  --muted:#9C93B5;
+  --emerald:#2FA88F;
+  --emerald-light:#4FCBAE;
+  --rose:#E8567A;
+  --rose-light:#F17E9B;
+  --line:rgba(246,242,233,0.12);
+  --font-display:'Bricolage Grotesque',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+html,body{height:100%;}
+body{
+  font-family:var(--font-body);color:var(--ivory);overflow-x:hidden;line-height:1.6;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(47,168,143,.25), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 85% 80%, rgba(232,86,122,.22), transparent 60%),
+    var(--plum-deep);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;
+}
+a{text-decoration:none;color:inherit;}
+.container{width:100%;max-width:640px;margin:0 auto;padding:0 32px;}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.4;pointer-events:none;z-index:0;}
+@keyframes floatSlow{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(30px,-40px) scale(1.08);}}
+@keyframes floatSlow2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-40px,30px) scale(1.1);}}
+.blob-1{width:480px;height:480px;background:var(--emerald);top:-140px;left:-140px;animation:floatSlow 14s ease-in-out infinite;}
+.blob-2{width:420px;height:420px;background:var(--rose);bottom:-160px;right:-120px;animation:floatSlow2 16s ease-in-out infinite;}
+
+.error-wrap{text-align:center;position:relative;z-index:3;}
+.eyebrow{font-family:var(--font-mono);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--emerald-light);display:inline-flex;align-items:center;gap:10px;font-weight:600;margin-bottom:22px;justify-content:center;width:100%;}
+.eyebrow::before,.eyebrow::after{content:'';width:26px;height:1px;background:var(--emerald-light);}
+
+.error-code{
+  font-family:var(--font-display);font-weight:800;font-size:clamp(96px,20vw,190px);
+  line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--emerald-light),var(--rose-light));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  position:relative;display:inline-block;
+}
+.ticker-line{
+  font-family:var(--font-mono);font-size:13px;color:var(--rose-light);
+  display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;margin-bottom:24px;
+}
+.ticker-line i{font-size:11px;}
+
+h1{font-family:var(--font-display);font-size:clamp(24px,3.4vw,34px);color:var(--ivory);margin-bottom:16px;font-weight:700;letter-spacing:-.01em;}
+.error-wrap p.lead{color:var(--muted);font-size:16px;max-width:480px;margin:0 auto 40px;}
+
+.action-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:100px;font-weight:600;font-size:14.5px;overflow:hidden;transition:transform .4s var(--ease), box-shadow .4s var(--ease);isolation:isolate;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.35) 50%,transparent 80%);transform:translateX(-120%);transition:transform .7s var(--ease);z-index:1;}
+.btn:hover::before{transform:translateX(120%);}
+.btn:hover{transform:translateY(-3px);}
+.btn-primary{background:linear-gradient(135deg,var(--emerald),var(--emerald-light));color:#0E241F;box-shadow:0 14px 30px rgba(47,168,143,.35);}
+.btn-primary:hover{box-shadow:0 20px 40px rgba(47,168,143,.45);}
+.btn-outline{border:1.5px solid var(--line);color:var(--ivory);}
+.btn-outline:hover{background:rgba(246,242,233,.08);}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+@media (max-width:600px){
+  .container{padding:0 20px;}
+  .action-row{flex-direction:column;align-items:stretch;}
+  .action-row .btn{justify-content:center;width:100%;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
+}
+</style>
+</head>
+<body>
+
+<span class="blob blob-1"></span>
+<span class="blob blob-2"></span>
+
+<div class="container">
+  <div class="error-wrap">
+    <div class="eyebrow reveal">Signal Lost</div>
+    <div class="error-code reveal">404</div>
+    <div class="ticker-line reveal"><i class="fa-solid fa-arrow-trend-down"></i> PAGE-NOT-FOUND ▼ 100.00%</div>
+    <h1 class="reveal">This page delisted itself.</h1>
+    <p class="lead reveal">The page you're looking for doesn't exist, was moved, or the link is out of date.</p>
+    <div class="action-row reveal">
+      <a href="javascript:history.back()" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+      <a href="./index.html" class="btn btn-primary"><i class="fa-solid fa-house"></i> Return to Home</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.reveal').forEach((el,i)=>{
+  setTimeout(()=>el.classList.add('in'), 120*i + 100);
+});
+</script>
+</body>
+</html>
